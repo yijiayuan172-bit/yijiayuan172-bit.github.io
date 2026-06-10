@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mystic Realm — Premium Intimate Wear</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fdf6f9;
+  --plum-dark:#2d1b3d;
+  --plum-mid:#6b3fa0;
+  --lavender:#c4a8e0;
+  --champagne:#d6c98a;
+  --text:#1e1025;
+  --muted:#9b7daa;
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0.875rem 2.5rem;
+  background:rgba(253,246,249,0.9);
+  backdrop-filter:blur(12px);
+  border-bottom:0.5px solid rgba(196,168,224,0.25);
+}
+.nav-logo img{height:44px;object-fit:contain}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--plum-mid)}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding:8rem 2rem 5rem;
+  position:relative;overflow:hidden;
+}
+.orb1{
+  position:absolute;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(196,168,224,0.3) 0%,transparent 65%);
+  top:-150px;left:-200px;pointer-events:none;
+}
+.orb2{
+  position:absolute;width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(214,201,138,0.22) 0%,transparent 65%);
+  bottom:-100px;right:-120px;pointer-events:none;
+}
+.orb3{
+  position:absolute;width:350px;height:350px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,197,213,0.25) 0%,transparent 65%);
+  top:30%;right:5%;pointer-events:none;
+}
+.hero-logo{width:150px;margin-bottom:2rem;position:relative;z-index:1}
+.hero-eye{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;position:relative;z-index:1}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(50px,9vw,90px);font-weight:300;letter-spacing:8px;line-height:1;
+  margin-bottom:0.75rem;position:relative;z-index:1;
+  background:linear-gradient(135deg,#6b3fa0 0%,#c4a8e0 55%,#d6c98a 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-title em{font-style:italic}
+.hero-sub{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:2.5rem;position:relative;z-index:1}
+.hero-cta{
+  display:inline-block;padding:13px 42px;
+  background:linear-gradient(135deg,#6b3fa0,#c4a8e0);
+  color:white;font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  text-decoration:none;border-radius:40px;
+  position:relative;z-index:1;transition:opacity 0.2s,transform 0.2s;
+}
+.hero-cta:hover{opacity:0.85;transform:translateY(-2px)}
+.spark{position:absolute;color:var(--champagne);opacity:0.55;z-index:1;pointer-events:none;font-size:18px}
+
+/* DIVIDER */
+.divider{text-align:center;padding:1.25rem 0;font-size:11px;letter-spacing:4px;color:var(--lavender)}
+
+/* COLLECTION */
+.collection{padding:4rem 2rem 5rem;max-width:1100px;margin:0 auto}
+.sec-eye{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:0.4rem}
+.sec-title{
+  font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,38px);font-weight:400;
+  text-align:center;margin-bottom:3rem;color:var(--plum-dark);
+}
+.sec-title em{
+  font-style:italic;
+  background:linear-gradient(135deg,#6b3fa0,#c4a8e0);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{
+  background:var(--white);border-radius:20px;overflow:hidden;
+  border:0.5px solid rgba(196,168,224,0.3);
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(107,63,160,0.1)}
+.card-img-wrap{overflow:hidden}
+.card-img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform 0.5s}
+.card:hover .card-img{transform:scale(1.04)}
+.card-placeholder{
+  width:100%;aspect-ratio:3/4;
+  background:linear-gradient(135deg,#f0e6f5,#e8f0d8);
+  display:none;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:13px;
+  letter-spacing:2px;color:var(--lavender);
+}
+.card-body{padding:1rem 1.25rem 1.25rem}
+.card-tag{
+  display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--plum-mid);background:rgba(196,168,224,0.18);
+  padding:3px 10px;border-radius:20px;margin-bottom:6px;
+}
+.card-name{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--plum-dark);margin-bottom:3px}
+.card-price{font-size:14px;color:var(--muted)}
+
+/* CONTACT */
+.contact{
+  background:linear-gradient(135deg,#f3e8fc,#fdf6f9 50%,#f8f2e0);
+  padding:5rem 2rem;text-align:center;
+}
+.contact-inner{max-width:540px;margin:0 auto}
+.contact-desc{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:2.5rem}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.contact-btn{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  padding:1.5rem 1rem;border-radius:16px;background:white;
+  border:0.5px solid rgba(196,168,224,0.4);
+  color:var(--plum-mid);text-decoration:none;
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  transition:all 0.25s;
+}
+.contact-btn:hover{background:var(--plum-mid);color:white;border-color:var(--plum-mid);transform:translateY(-2px)}
+.contact-btn svg{width:22px;height:22px}
+
+footer{
+  text-align:center;padding:1.75rem;font-size:11px;
+  color:var(--muted);letter-spacing:1px;background:var(--bg);
+  border-top:0.5px solid rgba(196,168,224,0.2);
+}
+
+@media(max-width:600px){
+  nav{padding:0.75rem 1.25rem}
+  .nav-links{display:none}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .hero-logo{width:120px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo"><img src="logo.png" alt="Mystic Realm"/></a>
+  <ul class="nav-links">
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#contact">Order</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="orb1"></div>
+  <div class="orb2"></div>
+  <div class="orb3"></div>
+  <span class="spark" style="top:18%;left:11%">✦</span>
+  <span class="spark" style="top:22%;right:9%;font-size:13px">✦</span>
+  <span class="spark" style="bottom:20%;left:7%;font-size:12px">✦</span>
+  <span class="spark" style="bottom:28%;right:14%">✦</span>
+  <img src="logo.png" alt="Mystic Realm" class="hero-logo"/>
+  <p class="hero-eye">✦ &nbsp; Premium Intimate Wear · United Kingdom &nbsp; ✦</p>
+  <h1 class="hero-title">MYSTIC <em>Realm</em></h1>
+  <p class="hero-sub">Discover your most alluring self</p>
+  <a href="#collection" class="hero-cta">View Collection</a>
+</div>
+
+<div class="divider">✦ &nbsp;&nbsp; new arrivals &nbsp;&nbsp; ✦</div>
+
+<div class="collection" id="collection">
+  <p class="sec-eye">our pieces</p>
+  <h2 class="sec-title">The <em>Collection</em></h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/product1.jpg" alt="Bunny Bodysuit" class="card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-placeholder">✦ coming soon ✦</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Cosplay</span>
+        <div class="card-name">Bunny Bodysuit</div>
+        <div class="card-price">£22.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/product2.jpg" alt="Black Lace Set" class="card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-placeholder">✦ coming soon ✦</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Lace</span>
+        <div class="card-name">Black Lace Set</div>
+        <div class="card-price">£26.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/product3.jpg" alt="Maid Dress" class="card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-placeholder">✦ coming soon ✦</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Romantic</span>
+        <div class="card-name">Maid Dress Set</div>
+        <div class="card-price">£24.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/product4.jpg" alt="Purple Lace Bodysuit" class="card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-placeholder">✦ coming soon ✦</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Luxury</span>
+        <div class="card-name">Purple Lace Bodysuit</div>
+        <div class="card-price">£28.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/product5.jpg" alt="Pink Bow Set" class="card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-placeholder">✦ coming soon ✦</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Dreamy</span>
+        <div class="card-name">Pink Bow Cami Set</div>
+        <div class="card-price">£20.99</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/product6.jpg" alt="Black Halter Dress" class="card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-placeholder">✦ coming soon ✦</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Bold</span>
+        <div class="card-name">Black Halter Dress</div>
+        <div class="card-price">£29.99</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="sec-eye">reach us</p>
+    <h2 class="sec-title" style="margin-bottom:1rem">Order &amp; <em>Enquiries</em></h2>
+    <p class="contact-desc">
+      💌 Discreet packaging guaranteed<br>
+      🚚 Fast UK delivery · All sizes available<br>
+      Message us to place an order or ask about sizing
+    </p>
+    <div class="contact-grid">
+      <a href="https://wa.me/447422888887" class="contact-btn" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.06L2 22l4.94-1.37A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/><path d="M8.5 9.5c0-.28.22-.5.5-.5h.5c.28 0 .5.22.5.5l.5 2-.5.5s1 2 3 3l.5-.5 2 .5c.28 0 .5.22.5.5v.5c0 .28-.22.5-.5.5C11 17 7 13 8.5 9.5z"/></svg>
+        WhatsApp
+      </a>
+      <a href="mailto:yijiayuan172@gmail.com" class="contact-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        Email Us
+      </a>
+      <a href="#" class="contact-btn" id="tiktok-btn" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"/></svg>
+        TikTok Shop
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>✦ &nbsp; © 2025 Mystic Realm · Premium Intimate Wear · United Kingdom &nbsp; ✦</footer>
+
+</body>
+</html>
